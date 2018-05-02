@@ -1,9 +1,9 @@
 package com.wei.mvp.presenter;
 
 import com.wei.mvp.contract.home.HomePageContract;
-import com.wei.mvp.data.bean.BeautyPicRespJson;
-import com.wei.mvp.data.source.HomePageDataSourceImpl;
-import com.wei.mvp.data.source.IHomePageDataSource;
+import com.wei.mvp.datasource.model.BeautyPicRespJson;
+import com.wei.mvp.datasource.home.HomePageDataSourceImpl;
+import com.wei.mvp.datasource.home.IHomePageDataSource;
 
 import java.util.List;
 

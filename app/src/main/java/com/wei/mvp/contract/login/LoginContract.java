@@ -1,15 +1,19 @@
 package com.wei.mvp.contract.login;
 
-import com.wei.mvp.contract.BasePresenter;
-import com.wei.mvp.contract.BaseView;
+import com.wei.mvp.contract.BaseContract;
 
 public interface LoginContract {
-    interface View extends BaseView<Presenter>
+    interface View extends BaseContract.BaseView
     {
 
     }
 
-    interface Presenter extends BasePresenter
+    interface Presenter extends BaseContract.BasePresenter
+    {
+
+    }
+
+    interface DataSource extends BaseContract.BaseDataSource
     {
 
     }

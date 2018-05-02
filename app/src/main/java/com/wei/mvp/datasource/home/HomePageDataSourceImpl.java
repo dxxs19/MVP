@@ -1,9 +1,9 @@
-package com.wei.mvp.data.source;
+package com.wei.mvp.datasource.home;
 
 import com.google.gson.Gson;
 import com.wei.mvp.common.Global;
-import com.wei.mvp.data.bean.BeautyPicRespJson;
-import com.wei.mvp.net.OkHttpHelper;
+import com.wei.mvp.datasource.model.BeautyPicRespJson;
+import com.wei.mvp.network.OkHttpHelper;
 
 public class HomePageDataSourceImpl implements IHomePageDataSource
 {

@@ -1,4 +1,4 @@
-package com.wei.mvp.data.bean;
+package com.wei.mvp.datasource.model;
 
 import java.util.List;
 

@@ -1,19 +1,25 @@
 package com.wei.mvp.contract.home;
 
-import com.wei.mvp.contract.BasePresenter;
-import com.wei.mvp.contract.BaseView;
-import com.wei.mvp.data.bean.BeautyPicRespJson;
+import com.wei.mvp.contract.BaseContract;
+import com.wei.mvp.datasource.model.BeautyPicRespJson;
 
 import java.util.List;
 
-public interface HomePageContract {
-    interface View extends BaseView<Presenter>
+public interface HomePageContract
+{
+    interface View extends BaseContract.BaseView
     {
         void showBeautyPics(List<BeautyPicRespJson.BeautiesBean> beautyPics);
     }
 
-    interface Presenter extends BasePresenter
+    interface Presenter extends BaseContract.BasePresenter
     {
         void loadPics(int page, int pageSize);
     }
+
+    interface DataSource extends BaseContract.BaseDataSource
+    {
+
+    }
+
 }

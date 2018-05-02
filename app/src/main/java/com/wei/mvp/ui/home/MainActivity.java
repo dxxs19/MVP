@@ -1,4 +1,4 @@
-package com.wei.mvp.view.home;
+package com.wei.mvp.ui.home;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -7,14 +7,13 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.wei.mvp.R;
 import com.wei.mvp.contract.home.HomePageContract;
-import com.wei.mvp.data.bean.BeautyPicRespJson;
+import com.wei.mvp.datasource.model.BeautyPicRespJson;
 import com.wei.mvp.presenter.HomePagePresenter;
-import com.wei.mvp.view.BaseActivity;
-import com.wei.mvp.view.adapter.PicsAdapter;
+import com.wei.mvp.ui.base.BaseActivity;
+import com.wei.mvp.ui.adapter.PicsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

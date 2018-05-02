@@ -1,9 +1,4 @@
-package com.wei.mvp.net;
-
-import com.google.gson.Gson;
-import com.wei.mvp.common.Global;
-import com.wei.mvp.data.bean.BeautyPicRespJson;
-import com.wei.mvp.util.LogUtil;
+package com.wei.mvp.network;
 
 import java.io.IOException;
 
@@ -13,6 +8,10 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 自己简单封装的okhttp请求框架，
+ * 也可以用retrofit等第三方封装框架
+ */
 public class OkHttpHelper
 {
     private final String TAG = getClass().getSimpleName();

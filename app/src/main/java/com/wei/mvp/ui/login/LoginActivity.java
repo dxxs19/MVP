@@ -1,11 +1,9 @@
-package com.wei.mvp.view.login;
+package com.wei.mvp.ui.login;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
 import com.wei.mvp.R;
-import com.wei.mvp.view.BaseActivity;
+import com.wei.mvp.ui.base.BaseActivity;
 
 public class LoginActivity extends BaseActivity {
 

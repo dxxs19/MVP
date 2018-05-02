@@ -3,10 +3,9 @@ package com.wei.mvp.util;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.wei.mvp.R;
-import com.wei.mvp.data.bean.GlideApp;
+import com.wei.mvp.datasource.model.GlideApp;
 
 public class GlideUtil {
     public static void showImage(Context context, ImageView imageView, String url)
