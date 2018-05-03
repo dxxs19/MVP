@@ -40,7 +40,6 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
 
     @Override
     protected void initView() {
-//        setContentView(R.layout.fragment_main);
         setContentView(R.layout.activity_main);
 //        TextView tv = findViewById(R.id.sample_text);
 //        tv.setText(stringFromJNI());
@@ -111,9 +110,6 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
 
     @Override
     public void showBeautyPics(List<BeautyPicRespJson.BeautiesBean> beautyPics) {
-//        for (BeautyPicRespJson.BeautiesBean beauty:beautyPics) {
-//            log(beauty.toString());
-//        }
         beautiesBeans = beautyPics;
         mHandler.post(new Runnable() {
             @Override

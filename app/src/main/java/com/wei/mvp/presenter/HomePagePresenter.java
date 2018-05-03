@@ -58,12 +58,12 @@ public class HomePagePresenter implements HomePageContract.Presenter {
 
     }
 
-    private void retrofitRequest() {
-        RetrofitManager retrofitManager = RetrofitManager.getInstance();
-        Retrofit retrofit = retrofitManager.getRetrofit(Global.BEAUTY_URL);
-        BeautyPicsApiService retrofitRequest = retrofit.create(BeautyPicsApiService.class);
-        Observable<BeautyPicRespJson> observable = retrofitRequest.getPics(20, 2);
-        observable.subscribeOn(Schedulers.io())
+    private void retrofitRequest()
+    {
+        RetrofitManager.getInstance()
+                .getPicsApiService()
+                .getPics(20, 2)
+                .subscribeOn(Schedulers.io())
                 .map(new Function<BeautyPicRespJson, List<BeautyPicRespJson.BeautiesBean>>() {
                     @Override
                     public List<BeautyPicRespJson.BeautiesBean> apply(BeautyPicRespJson beautyPicRespJson) {
