@@ -35,7 +35,7 @@ public class PicsAdapter extends RecyclerView.Adapter<PicsAdapter.CusViewHolder>
     public void onBindViewHolder(@NonNull CusViewHolder holder, int position) {
         BeautyPicRespJson.BeautiesBean beautiesBean = getItem(position);
         String url = beautiesBean.getUrl();
-        System.out.println(url);
+//        System.out.println(url);
         if (!TextUtils.isEmpty(url))
         {
             GlideUtil.showImage(mContext, holder.showPicImgView, url);

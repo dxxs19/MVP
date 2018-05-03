@@ -8,6 +8,7 @@ public interface BaseContract
 {
     interface BasePresenter {
         void start();
+        void detach();
     }
 
     interface BaseView {
