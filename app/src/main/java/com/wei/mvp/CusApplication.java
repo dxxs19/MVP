@@ -6,6 +6,7 @@ import android.os.StrictMode;
 
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.wei.mvp.network.RetrofitManager;
 
 public class CusApplication extends Application {
     private final String TAG = getClass().getSimpleName();
@@ -15,6 +16,7 @@ public class CusApplication extends Application {
     public void onCreate() {
         super.onCreate();
         setupLeakCanary();
+        RetrofitManager.getInstance().init();
     }
 
     private void setupLeakCanary() {

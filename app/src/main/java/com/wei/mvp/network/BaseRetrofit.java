@@ -1,5 +1,7 @@
 package com.wei.mvp.network;
 
+import com.wei.mvp.common.Global;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -12,7 +14,7 @@ public abstract class BaseRetrofit
     public static final int DEFAULT_TIME_OUT = 30;
     protected Retrofit mRetrofit;
 
-    protected void init()
+    public void init()
     {
         initRetrofit();
         initService();
@@ -21,7 +23,7 @@ public abstract class BaseRetrofit
     private void initRetrofit()
     {
         mRetrofit = new Retrofit.Builder()
-                .baseUrl(getBaseUrl())
+                .baseUrl(Global.BEAUTY_URL)
                 .client(getOkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -37,12 +39,6 @@ public abstract class BaseRetrofit
         return builder.build();
     }
 
-    public Retrofit getRetrofit()
-    {
-        return mRetrofit;
-    }
-
     protected abstract void initService();
 
-    protected abstract String getBaseUrl();
 }

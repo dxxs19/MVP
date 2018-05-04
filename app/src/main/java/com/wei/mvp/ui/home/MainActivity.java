@@ -77,7 +77,7 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
     protected void onResume() {
         super.onResume();
         mPresenter.start();
-//        mPresenter.loadPics(pageIndex, pageSize);
+        mPresenter.loadPics(pageIndex, pageSize);
     }
 
     @Override

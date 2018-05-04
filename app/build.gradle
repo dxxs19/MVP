@@ -26,6 +26,10 @@ android {
             path "CMakeLists.txt"
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -47,8 +51,10 @@ dependencies {
     api 'com.squareup.okio:okio:1.13.0'
     api 'com.squareup.retrofit2:retrofit:2.4.0'
     api 'com.squareup.retrofit2:converter-gson:2.4.0'
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'//配合rxjava2
-    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'//拦截器
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //配合rxjava2
+    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    //拦截器
     api 'com.google.code.gson:gson:2.8.4'
     api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 }
