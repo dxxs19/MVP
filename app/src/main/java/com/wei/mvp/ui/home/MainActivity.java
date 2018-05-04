@@ -53,7 +53,6 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
 
     @Override
     protected void initData() {
-
     }
 
     @Override
@@ -111,13 +110,15 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
     @Override
     public void showBeautyPics(List<BeautyPicRespJson.BeautiesBean> beautyPics) {
         beautiesBeans = beautyPics;
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                picsAdapter = new PicsAdapter(MainActivity.this, beautiesBeans);
-                recyclerView.setAdapter(picsAdapter);
-            }
-        });
+        picsAdapter = new PicsAdapter(MainActivity.this, beautiesBeans);
+        recyclerView.setAdapter(picsAdapter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mPresenter.detach();
+        mPresenter = null;
+        super.onDestroy();
     }
 
     @Override

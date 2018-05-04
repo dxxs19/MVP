@@ -15,7 +15,7 @@ public class GlideUtil {
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.drawable.leak_canary_icon)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .override(900, 750)
+                .override(520, 750)
                 .into(imageView);
     }
 }

@@ -1,5 +1,6 @@
 package com.wei.mvp.network;
 
+import com.wei.mvp.common.Global;
 import com.wei.mvp.network.retrofitservice.BeautyPicsApiService;
 
 /**
@@ -9,6 +10,7 @@ import com.wei.mvp.network.retrofitservice.BeautyPicsApiService;
 public class RetrofitManager extends BaseRetrofit
 {
     private BeautyPicsApiService mPicsApiService;
+    private String mBaseUrl = Global.BEAUTY_URL;
 
     public static RetrofitManager getInstance()
     {
@@ -24,6 +26,16 @@ public class RetrofitManager extends BaseRetrofit
     protected void initService()
     {
         mPicsApiService = createService(BeautyPicsApiService.class);
+    }
+
+    @Override
+    protected String getBaseUrl() {
+        return mBaseUrl;
+    }
+
+    public void setBaseUrl(String url)
+    {
+        mBaseUrl = url;
     }
 
     private <T> T createService(Class<T> service) {
