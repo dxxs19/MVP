@@ -46,6 +46,11 @@ public abstract class BaseActivity extends AppCompatActivity
         LogUtil.e(TAG, msg);
     }
 
+    protected void showMsg(String msg)
+    {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
     protected abstract void initView();
     protected abstract void initData();
     protected abstract void initListener();

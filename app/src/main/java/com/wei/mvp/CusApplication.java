@@ -15,7 +15,7 @@ public class CusApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        setupLeakCanary();
+//        setupLeakCanary();
         RetrofitManager.getInstance().init();
     }
 
