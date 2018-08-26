@@ -19,6 +19,7 @@ import com.wei.mvp.datasource.greendao.DaoSession;
 import com.wei.mvp.datasource.model.BeautyPicRespJson;
 import com.wei.mvp.datasource.model.Company;
 import com.wei.mvp.datasource.model.Employee;
+import com.wei.mvp.datasource.model.IDCard;
 import com.wei.mvp.presenter.HomePagePresenter;
 import com.wei.mvp.ui.base.BaseActivity;
 import com.wei.mvp.ui.adapter.PicsAdapter;
@@ -96,11 +97,17 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
 //                updateCompanyName(company, newCompanyName);
 //                logNewCompanyInfos(newCompanyName);
 //                deleteTargetCompany(newCompanyName);
-                Employee employee1 = new Employee(null, "caixiangwei",  28, "男", company.getId());
-                Employee employee2 = new Employee(null, "蔡祥伟",  29, "男", company.getId());
-                Employee employee3 = new Employee(null, "刘亦菲",  30, "女", company.getId());
+
+                IDCard idCard = new IDCard(null, "4409231989100342211");
+                mDaoSession.getIDCardDao().save(idCard);
+                IDCard idCard1 = mDaoSession.getIDCardDao().queryBuilder().list().get(0);
+
+                Employee employee1 = new Employee(null, "caixiangwei",  28, "男", company.getId(), idCard1.getIdCardId());
+                Employee employee2 = new Employee(null, "蔡祥伟",  29, "男", company.getId(), idCard1.getIdCardId());
+                Employee employee3 = new Employee(null, "刘亦菲",  30, "女", company.getId(), idCard1.getIdCardId());
                 saveEmplyees(employee1, employee2, employee3);
                 logAllDatas();
+
                 break;
 
                 default:
@@ -119,6 +126,11 @@ public class MainActivity extends BaseActivity implements HomePageContract.View
             {
                 for (Employee employee:employees) {
                     LogUtil.e(TAG, employee.toString());
+                    IDCard idCard = employee.getIdCard();
+                    if (null != idCard)
+                    {
+                        LogUtil.e(TAG, idCard.toString());
+                    }
                 }
             }
         }
