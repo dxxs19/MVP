@@ -6,17 +6,34 @@ import android.os.StrictMode;
 
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.wei.mvp.datasource.greendao.DaoMaster;
+import com.wei.mvp.datasource.greendao.DaoSession;
 import com.wei.mvp.network.RetrofitManager;
+
+import org.greenrobot.greendao.database.Database;
 
 public class CusApplication extends Application {
     private final String TAG = getClass().getSimpleName();
     private RefWatcher refWatcher;
+    private DaoSession daoSession;
 
     @Override
     public void onCreate() {
         super.onCreate();
 //        setupLeakCanary();
         RetrofitManager.getInstance().init();
+        initGreenDao();
+    }
+
+    private void initGreenDao() {
+        DaoMaster.DevOpenHelper devOpenHelper = new DaoMaster.DevOpenHelper(this, "company-db");
+        Database database = devOpenHelper.getWritableDb();
+        daoSession = new DaoMaster(database).newSession();
+    }
+
+    public DaoSession getDaoSession()
+    {
+        return daoSession;
     }
 
     private void setupLeakCanary() {
